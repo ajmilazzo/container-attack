@@ -1,7 +1,7 @@
 # Container Attack
 A very secure container...
 
-![Screenshot 2023-05-31 at 6 10 33 PM](https://github.com/ajmilazzo/container-attack/assets/18070948/6e290f6e-c805-45b8-836a-bc4817070f00)
+![Screenshot 2023-05-31 at 6 10 33 PM](https://github.com/ajmilazzo/container-attack/assets/18070948/7f849b18-e1f3-4d5e-9e77-71b08bed9840)
 
 ## Prerequisites
 Any kubernetes runtime will work, but this demonstration was developed and tested against [k3d](https://k3d.io/).
