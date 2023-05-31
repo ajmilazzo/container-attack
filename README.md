@@ -1,8 +1,10 @@
 # Container Attack
 A very secure container...
 
+![Screenshot 2023-05-31 at 6 10 33 PM](https://github.com/ajmilazzo/container-attack/assets/18070948/6e290f6e-c805-45b8-836a-bc4817070f00)
+
 ## Prerequisites
-You can use any kubernetes runtime, but this demonstration was developed and tested against [k3d](https://k3d.io/)
+Any kubernetes runtime will work, but this demonstration was developed and tested against [k3d](https://k3d.io/).
 
 ## Usage
 Run the commands in `commands.txt` for a demonstration of privilege escalation within a container.
